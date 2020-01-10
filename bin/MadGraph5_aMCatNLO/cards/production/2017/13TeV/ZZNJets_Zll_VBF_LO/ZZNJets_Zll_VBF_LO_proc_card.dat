@@ -1,0 +1,14 @@
+import model sm-ckm_no_b_mass
+
+define p = u c s d b u~ c~ s~ d~ b~ g
+define l+ = e+ mu+ ta+
+define l- = e- mu- ta-
+define j = p
+# Specify process(es) to run
+generate p p > Z Z , Z > l+ l- @0
+add process p p > Z Z j , Z > l+ l- @1
+add process p p > Z Z j j , Z > l+ l- @2
+add process p p > Z Z j j j , Z > l+ l- @3
+add process p p > Z Z j j j j , Z > l+ l- @4
+# Output processes to MadEvent directory
+output ZZNJets_Zll_VBF_LO  -nojpeg
