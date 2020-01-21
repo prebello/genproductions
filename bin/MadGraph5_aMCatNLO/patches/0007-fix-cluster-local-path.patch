@@ -63,7 +63,7 @@ index 95b0f49..b06677d 100644
        character*20 parm(20)
        double precision value(20)
        real*8 alphasPDF
-@@ -38,7 +38,7 @@ c generic subroutine to open the table files in the right directories
+@@ -38,8 +38,8 @@ c generic subroutine to open the table files in the right directories
  c********************************************************************
        implicit none
  c
@@ -72,3 +72,15 @@ index 95b0f49..b06677d 100644
        data up/'../'/
        logical exists
        integer i
+ 
+--- a/Template/LO/Source/.make_opts	2020-01-21 15:23:45.596643000 +0100
++++ b/Template/LO/Source/.make_opts 	2020-01-21 15:33:33.557482000 +0100
+@@ -13,7 +13,7 @@
+ 
+ # Rest of the makefile
+ ifeq ($(origin FFLAGS),undefined)
+-FFLAGS= -O -w -fbounds-check -fPIC
++FFLAGS= -O -w -fbounds-check -fPIC -mmodel 
+ #FFLAGS+= -g -fbounds-check -ffpe-trap=invalid,zero,overflow,underflow,denormal -Wall
+ endif
+ 
